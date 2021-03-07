@@ -51,7 +51,7 @@ function barChart(subjectID) {
             orientation: 'h'
 
         }
-        var layout = { title: "OTUs Found", margin: { t: 30, l: 150 } };
+        var layout = { title: "OTUs Found"};
         Plotly.newPlot('bar', [trace1], layout);
     })
 };
