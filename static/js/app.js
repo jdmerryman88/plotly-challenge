@@ -63,13 +63,10 @@ function metaData(subjectID){
 
     d3.json('samples.json').then((data)=>{
         var metadata = data.metadata;
-        var ID = metadata.map(row => row.id).indexOf(subjectID);
-        var ethnicity = metadata[ID];
-        console.log(ethnicity)
-    
-    
-    
-    
+        var searchData = metadata.filter(item => item.id == subjectID);
+        var outputData = searchData[0];
+        console.log(outputData)
+
     })
 }
 
