@@ -72,7 +72,11 @@ function metaData(subjectID){
         //clear panel
         panel.html("")
 
-        
+        Object.entries(outputData).forEach(([key, value])=> {
+
+            panel.append("h6").text(`${key.toUpperCase()}: ${value}`);
+
+        })
 
     })
 }
