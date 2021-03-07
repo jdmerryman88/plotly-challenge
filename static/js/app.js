@@ -1,11 +1,34 @@
-let url = "samples.json"
+function defaultValue (){
+    var selector = d3.selectAll('#selDataset');
 
-function unpack(rows, index) {
-    return rows.map(function(row) {
-      return row[index];
-    });
-  }
+    d3.json('samples.json').then((data)=>{
+    
+        var sampleNames=data.names;
+        sampleNames.forEach((sample) => {
+            selector
+              .append("option")
+              .text(sample)
+              .property("value", sample);
+            });
+      
+        var defaultID = sampleNames[0];
+    
+        barChart(defaultID);
+        bubbleChart(defaultID);
+        metaData(defaultID);
+        gaugeChart(defaultID)
 
+      });
+     };
+
+
+function idSelected(newID){
+    barChart(newID);
+    bubbleChart(newID);
+    metaData(newID);
+};
+
+defaultValue();
 function barChart(subjectID){
 
     d3.json('samples.json').then((data) =>{
@@ -81,5 +104,5 @@ function metaData(subjectID){
     })
 }
 
-metaData('940')
+
 
