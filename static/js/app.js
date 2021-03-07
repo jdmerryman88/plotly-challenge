@@ -59,5 +59,19 @@ function bubbleChart(subjectID){
         })
 }
 
-bubbleChart('940')
+function metaData(subjectID){
+
+    d3.json('samples.json').then((data)=>{
+        var metadata = data.metadata;
+        var ID = metadata.map(row => row.id).indexOf(subjectID);
+        var ethnicity = metadata[ID];
+        console.log(ethnicity)
+    
+    
+    
+    
+    })
+}
+
+metaData('940')
 
