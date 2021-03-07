@@ -45,7 +45,7 @@ function barChart(subjectID) {
 
         let trace1 = {
             x: otuValueTen,
-            y: otuIDTen.map(r => `UTO ${r}`),
+            y: otuIDTen.map(r => `OTU ${r}`),
             text: otuLabel,
             type: 'bar',
             orientation: 'h'
