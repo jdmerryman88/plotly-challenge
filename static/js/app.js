@@ -40,7 +40,7 @@ function barChart(subjectID) {
         var otuIDTen = otuID[ID].slice(0, 10);
         var otuLabel = samples.map(row => row.otu_labels).slice(0, 10);
         //console.log(subjectID)
-        console.log(ID)
+        //console.log(ID)
         console.log(otuLabel)
 
         let trace1 = {
