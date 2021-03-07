@@ -10,12 +10,12 @@ function defaultValue() {
                 .text(sample)
                 .property("value", sample);
         });
-        var defaultID = sampleNames[0];
+        var initialID = sampleNames[0];
 
-        barChart(defaultID);
-        bubbleChart(defaultID);
-        metaData(defaultID);
-        gaugeChart(defaultID)
+        barChart(initialID);
+        bubbleChart(initialID);
+        metaData(initialID);
+        gaugeChart(initialID)
     })
 };
 
