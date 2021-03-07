@@ -91,7 +91,7 @@ function metaData(subjectID){
         var metadata = data.metadata;
         var searchData = metadata.filter(item => item.id == subjectID);
         var outputData = searchData[0];
-        console.log(outputData)
+        //console.log(outputData)
 
         //select panel
         var panel = d3.select("#sample-metadata");
