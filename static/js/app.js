@@ -33,6 +33,18 @@ function barChart(subjectID){
     })
 };
 
+function bubbleChart(subjectID){
 
-barChart("960");
+    d3.json('samples.json').then((data) =>{
+        var samples = data.samples;
+        var ID = samples.map( row => row.id).indexOf(subjectID);
+        var otuID = samples.map(row => row.otu_ids);
+        var otuID = otuID[ID];
+        console.log(otuID);
+
+
+
+})}
+
+bubbleChart()
 
