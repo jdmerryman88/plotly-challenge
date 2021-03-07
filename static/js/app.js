@@ -37,7 +37,7 @@ function bubbleChart(subjectID){
 
     d3.json('samples.json').then((data) =>{
         var samples = data.samples;
-        var ID = samples.map( row => row.id).indexOf(subjectID);
+        var ID = samples.map(row => row.id).indexOf(subjectID);
         var otuID = samples.map(row => row.otu_ids);
         var otuIDs = otuID[ID];
         var otuValue = samples.map(row =>row.sample_values);
@@ -59,5 +59,5 @@ function bubbleChart(subjectID){
         })
 }
 
-bubbleChart()
+bubbleChart('940')
 
