@@ -30,6 +30,8 @@ function defaultValue (){
 
 
 defaultValue();
+
+
 function barChart(subjectID){
 
     d3.json('samples.json').then((data) =>{
@@ -39,6 +41,7 @@ function barChart(subjectID){
         var otuValueTen = otuValue[ID].slice(0,10).reverse();
         var otuID = samples.map(row => row.otu_ids);
         var otuIDTen = otuID[ID].slice(0,10);
+        
         var otuLabel = samples.map(row => row.otu_labels).slice(0,10);
         console.log(subjectID)
         console.log(ID)
