@@ -15,7 +15,7 @@ function defaultValue() {
         barChart(initialID);
         bubbleChart(initialID);
         metaData(initialID);
-        gaugeChart(initialID)
+        
     })
 };
 
@@ -51,7 +51,7 @@ function barChart(subjectID) {
             orientation: 'h'
 
         }
-        var layout = { title: "OTUs Found"};
+        var layout = { title: "Top 10 OTUs Found" };
         Plotly.newPlot('bar', [trace1], layout);
     })
 };
