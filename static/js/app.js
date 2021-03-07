@@ -20,7 +20,7 @@ function barChart(subjectID){
         console.log(ID)
         console.log(otuLabel)
 
-        let trace = {
+        let trace1 = {
             x: otuValueTen,
             y: otuIDTen.map(r => `UTO ${r}`),
             text: otuLabel,
@@ -29,7 +29,7 @@ function barChart(subjectID){
 
         }
         var layout = {title: "OTUs Found", margin: { t: 30, l: 150 }};
-        Plotly.newPlot('bar', [trace], layout);
+        Plotly.newPlot('bar', [trace1], layout);
     })
 };
 
@@ -39,12 +39,25 @@ function bubbleChart(subjectID){
         var samples = data.samples;
         var ID = samples.map( row => row.id).indexOf(subjectID);
         var otuID = samples.map(row => row.otu_ids);
-        var otuID = otuID[ID];
-        console.log(otuID);
+        var otuIDs = otuID[ID];
+        var otuValue = samples.map(row =>row.sample_values);
+        var otuValues = otuValue[ID];
+        var otuLabel = samples.map(row => row.otu_labels);
+        var otuLabels = otuLabel[ID];
 
+        let trace2 = {
+            x: otuIDs,
+            y: otuValues,
+            text: otuLabels,
+            mode: 'markers',
+            marker : { size: otuValues, color: otuIDs}
+        };
+        var layout = {xaxis: {title: 'OTU ID'}};
 
+        Plotly.newPlot('bubble', [trace2], layout);
 
-})}
+        })
+}
 
 bubbleChart()
 
