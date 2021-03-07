@@ -67,6 +67,13 @@ function metaData(subjectID){
         var outputData = searchData[0];
         console.log(outputData)
 
+        //select panel
+        var panel = d3.select("#sample-metadata");
+        //clear panel
+        panel.html("")
+
+        
+
     })
 }
 
