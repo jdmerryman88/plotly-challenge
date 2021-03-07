@@ -19,14 +19,15 @@ function defaultValue (){
         gaugeChart(defaultID)
 
       });
-     };
+     
+    };
 
+    function optionChanged(newID){
+        barChart(newID);
+        bubbleChart(newID);
+        metaData(newID);
+    };
 
-function idSelected(newID){
-    barChart(newID);
-    bubbleChart(newID);
-    metaData(newID);
-};
 
 defaultValue();
 function barChart(subjectID){
